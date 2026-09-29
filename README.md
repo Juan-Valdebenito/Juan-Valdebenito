@@ -20,7 +20,7 @@
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=github,terraform,linux,windows,vercel" alt="GitHub, Terraform, Linux, Windows, Vercel" />
   </a>
-  <img src="assets/render.svg" width="48" alt="Render" />
+  
 </p>
 
 ---
