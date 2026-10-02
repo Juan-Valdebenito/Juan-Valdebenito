@@ -21,5 +21,5 @@
 <br />
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7b2ff7,50:1e6fd9,100:0b1a3a&height=160&section=footer&reversal=true&text=Ph'ang%2C%20may%20your%20spirit%20go%20with%20Eywa&fontSize=24&fontColor=ffffff&fontAlignY=70&animation=twinkling" width="100%" alt="Ph'ang, may your spirit go with Eywa" />
+  <img src="assets/pandora-sea.svg" width="100%" alt="Ph'ang, may your spirit go with Eywa · Oel ngati kameie, I see you" />
 </p>

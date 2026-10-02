@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="230" viewBox="0 0 880 230" font-family="'Fira Code','JetBrains Mono',Consolas,'Courier New',monospace">
+  <style>
+    .w1 { animation: drift 14s linear infinite; }
+    .w2 { animation: drift 10s linear infinite reverse; }
+    .w3 { animation: drift 7s linear infinite; }
+    @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-220px); } }
+
+    .bob1 { animation: bob 4s ease-in-out infinite; }
+    .bob2 { animation: bob 4.8s ease-in-out infinite; animation-delay: -2s; }
+    @keyframes bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-6px) rotate(2deg); } }
+
+    .swim1 { animation: swim 16s ease-in-out infinite alternate; }
+    .swim2 { animation: swim 19s ease-in-out infinite alternate-reverse; }
+    @keyframes swim { from { transform: translateX(-35px); } to { transform: translateX(35px); } }
+
+    .glow-dots circle { animation: twinkle 3s ease-in-out infinite; }
+    .glow-dots circle:nth-child(2n) { animation-delay: -1.2s; animation-duration: 4.2s; }
+    .glow-dots circle:nth-child(3n) { animation-delay: -2.1s; }
+    @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+  </style>
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#03070F"/>
+      <stop offset="1" stop-color="#0B1A3A"/>
+    </linearGradient>
+    <linearGradient id="phrase" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58E6D9"/>
+      <stop offset="1" stop-color="#C9B3FF"/>
+    </linearGradient>
+    <clipPath id="frame"><rect width="880" height="230" rx="16"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="880" height="230" fill="url(#night)"/>
+    <g class="glow-dots" fill="#FFFFFF"><circle cx="546" cy="47" r="1"/><circle cx="821" cy="46" r="1"/><circle cx="35" cy="32" r="0.6"/><circle cx="568" cy="55" r="0.6"/><circle cx="330" cy="53" r="0.8"/><circle cx="478" cy="38" r="0.6"/><circle cx="639" cy="29" r="0.6"/><circle cx="798" cy="48" r="0.6"/><circle cx="665" cy="12" r="1"/><circle cx="541" cy="15" r="0.6"/><circle cx="846" cy="8" r="0.6"/><circle cx="836" cy="17" r="0.6"/><circle cx="259" cy="58" r="1"/><circle cx="763" cy="41" r="0.6"/><circle cx="819" cy="44" r="0.8"/><circle cx="267" cy="27" r="0.6"/><circle cx="815" cy="22" r="0.8"/><circle cx="269" cy="39" r="0.6"/><circle cx="523" cy="45" r="0.6"/><circle cx="277" cy="51" r="0.8"/><circle cx="609" cy="18" r="0.8"/><circle cx="616" cy="11" r="0.6"/><circle cx="826" cy="27" r="0.8"/><circle cx="26" cy="49" r="0.8"/><circle cx="334" cy="52" r="0.8"/><circle cx="50" cy="17" r="0.6"/></g>
+
+    <!-- Ola del fondo -->
+    <g class="w1">
+      <path d="M-440 92 Q-385.0 85 -330.0 92 T-220 92 T-110 92 T0 92 T110 92 T220 92 T330 92 T440 92 T550 92 T660 92 T770 92 T880 92 T990 92 T1100 92 T1210 92 T1320 92 V230 H-440 Z" fill="#0C2C63"/>
+      <path d="M-440 92 Q-385.0 85 -330.0 92 T-220 92 T-110 92 T0 92 T110 92 T220 92 T330 92 T440 92 T550 92 T660 92 T770 92 T880 92 T990 92 T1100 92 T1210 92 T1320 92" fill="none" stroke="#58E6D9" stroke-opacity="0.45" filter="url(#glow)"/>
+    </g>
+
+    <!-- Ilu 1: Ph'ang -->
+    <g transform="translate(240 116)">
+      <g class="swim1"><g class="bob1">
+        <text x="30" y="-68" text-anchor="middle" font-size="15" fill="url(#phrase)" filter="url(#glow)">Ph'ang, may your spirit go with Eywa</text>
+        <g transform="scale(1.3)">
+          <ellipse cx="0" cy="8" rx="36" ry="12" fill="#2C6FB8" fill-opacity="0.55" stroke="#8ED9E0" stroke-opacity="0.6"/>
+          <path d="M-14 12 q-10 10 -24 12 q10 -8 14 -14 Z M14 12 q8 10 22 12 q-8 -8 -12 -14 Z" fill="#58E6D9" fill-opacity="0.35"/>
+          <path d="M-34 6 Q-48 4 -60 10 Q-48 10 -34 12 Z" fill="#2C6FB8" fill-opacity="0.5"/>
+          <path d="M-22 0 Q0 -9 22 0 Z" fill="#1E5FA8" stroke="#8ED9E0" stroke-opacity="0.7"/>
+          <path d="M18 2 Q40 -4 44 -28 Q46 -38 56 -40 Q67 -40 70 -34 Q64 -31 58 -31 Q53 -29 52 -22 Q48 0 30 8 Z" fill="#2C6FB8" stroke="#8ED9E0" stroke-width="1"/>
+          <circle cx="60" cy="-36" r="1.4" fill="#F3FFFE"/>
+          <g fill="#58E6D9"><circle cx="46" cy="-14" r="1.3"/><circle cx="42" cy="-6" r="1.3"/><circle cx="48" cy="-22" r="1.1"/><circle cx="-8" cy="-3" r="1.2"/><circle cx="4" cy="-4" r="1.2"/></g>
+        </g>
+      </g></g>
+    </g>
+
+    <!-- Ola del medio -->
+    <g class="w2">
+      <path d="M-440 124 Q-385.0 118 -330.0 124 T-220 124 T-110 124 T0 124 T110 124 T220 124 T330 124 T440 124 T550 124 T660 124 T770 124 T880 124 T990 124 T1100 124 T1210 124 T1320 124 V230 H-440 Z" fill="#0A2453" fill-opacity="0.92"/>
+      <path d="M-440 124 Q-385.0 118 -330.0 124 T-220 124 T-110 124 T0 124 T110 124 T220 124 T330 124 T440 124 T550 124 T660 124 T770 124 T880 124 T990 124 T1100 124 T1210 124 T1320 124" fill="none" stroke="#58E6D9" stroke-opacity="0.55" filter="url(#glow)"/>
+    </g>
+
+    <!-- Ilu 2: I see you -->
+    <g transform="translate(660 164)">
+      <g class="swim2"><g class="bob2">
+        <text x="-30" y="-68" text-anchor="middle" font-size="15" fill="url(#phrase)" filter="url(#glow)">Oel ngati kameie · I see you</text>
+        <g transform="scale(-1.3 1.3)">
+          <ellipse cx="0" cy="8" rx="36" ry="12" fill="#2C6FB8" fill-opacity="0.55" stroke="#8ED9E0" stroke-opacity="0.6"/>
+          <path d="M-14 12 q-10 10 -24 12 q10 -8 14 -14 Z M14 12 q8 10 22 12 q-8 -8 -12 -14 Z" fill="#58E6D9" fill-opacity="0.35"/>
+          <path d="M-34 6 Q-48 4 -60 10 Q-48 10 -34 12 Z" fill="#2C6FB8" fill-opacity="0.5"/>
+          <path d="M-22 0 Q0 -9 22 0 Z" fill="#1E5FA8" stroke="#8ED9E0" stroke-opacity="0.7"/>
+          <path d="M18 2 Q40 -4 44 -28 Q46 -38 56 -40 Q67 -40 70 -34 Q64 -31 58 -31 Q53 -29 52 -22 Q48 0 30 8 Z" fill="#2C6FB8" stroke="#8ED9E0" stroke-width="1"/>
+          <circle cx="60" cy="-36" r="1.4" fill="#F3FFFE"/>
+          <g fill="#58E6D9"><circle cx="46" cy="-14" r="1.3"/><circle cx="42" cy="-6" r="1.3"/><circle cx="48" cy="-22" r="1.1"/><circle cx="-8" cy="-3" r="1.2"/><circle cx="4" cy="-4" r="1.2"/></g>
+        </g>
+      </g></g>
+    </g>
+
+    <!-- Ola del frente -->
+    <g class="w3">
+      <path d="M-440 168 Q-385.0 160 -330.0 168 T-220 168 T-110 168 T0 168 T110 168 T220 168 T330 168 T440 168 T550 168 T660 168 T770 168 T880 168 T990 168 T1100 168 T1210 168 T1320 168 V230 H-440 Z" fill="#071A3E" fill-opacity="0.9"/>
+      <path d="M-440 168 Q-385.0 160 -330.0 168 T-220 168 T-110 168 T0 168 T110 168 T220 168 T330 168 T440 168 T550 168 T660 168 T770 168 T880 168 T990 168 T1100 168 T1210 168 T1320 168" fill="none" stroke="#9B6BFF" stroke-opacity="0.6" filter="url(#glow)"/>
+    </g>
+
+    <!-- Plancton bioluminiscente -->
+    <g class="glow-dots" fill="#58E6D9" filter="url(#glow)"><circle cx="112" cy="168" r="1.1"/><circle cx="306" cy="176" r="1.4"/><circle cx="226" cy="183" r="1.4"/><circle cx="654" cy="207" r="1.1"/><circle cx="42" cy="218" r="0.8"/><circle cx="189" cy="187" r="1.1"/><circle cx="800" cy="174" r="1.4"/><circle cx="479" cy="172" r="1.1"/><circle cx="273" cy="208" r="1.4"/><circle cx="138" cy="200" r="1.1"/><circle cx="149" cy="153" r="1.4"/><circle cx="469" cy="179" r="0.8"/><circle cx="647" cy="175" r="1.1"/><circle cx="402" cy="180" r="0.8"/><circle cx="852" cy="196" r="1.1"/><circle cx="297" cy="165" r="1.4"/><circle cx="495" cy="160" r="1.1"/><circle cx="102" cy="181" r="0.8"/><circle cx="61" cy="180" r="0.8"/><circle cx="400" cy="222" r="0.8"/><circle cx="849" cy="183" r="1.1"/><circle cx="602" cy="173" r="1.1"/><circle cx="260" cy="179" r="0.8"/><circle cx="107" cy="209" r="1.4"/><circle cx="835" cy="195" r="1.1"/><circle cx="756" cy="163" r="1.1"/><circle cx="244" cy="206" r="1.4"/><circle cx="321" cy="207" r="1.1"/><circle cx="607" cy="198" r="1.1"/><circle cx="323" cy="201" r="1.1"/><circle cx="728" cy="169" r="1.4"/><circle cx="626" cy="219" r="1.1"/><circle cx="569" cy="192" r="0.8"/><circle cx="418" cy="206" r="1.1"/></g>
+  </g>
+
+  <rect x="0.75" y="0.75" width="878.5" height="228.5" rx="16" fill="none" stroke="url(#phrase)" stroke-opacity="0.6" stroke-width="1.5"/>
+</svg>
