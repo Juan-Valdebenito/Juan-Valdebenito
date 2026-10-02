@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0b1a3a,50:1e6fd9,100:7b2ff7&height=220&section=header&text=Juan%20Pablo%20Valdebenito&fontSize=44&fontColor=ffffff&fontAlignY=36&desc=Estudiante%20de%20Ingenier%C3%ADa%20Civil%20Inform%C3%A1tica&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Juan Pablo Valdebenito" />
+  <img src="assets/pandora-card.svg" width="100%" alt="Juan Pablo Valdebenito" />
 </p>
 
 ### $\color{#58E6D9}{\textsf{Sobre mí}}$
