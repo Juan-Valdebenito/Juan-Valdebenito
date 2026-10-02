@@ -2,13 +2,6 @@
   <img src="assets/pandora-card.svg" width="100%" alt="Juan Pablo Valdebenito" />
 </p>
 
-### $\color{#58E6D9}{\textsf{Sobre mí}}$
-
-- Estudiante de Ingeniería Civil Informática
-- Me interesa el desarrollo de software, el desarrollo web y el data science
-- Aprendiendo sobre infraestructura en la nube con Terraform
-- Fanático de Avatar
-
 ### $\color{#58E6D9}{\textsf{Lenguajes}}$
 
 <p align="center">
@@ -28,9 +21,5 @@
 <br />
 
 <p align="center">
-  <i>Ph'ang, may your spirit go with Eywa</i>
-</p>
-
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7b2ff7,50:1e6fd9,100:0b1a3a&height=160&section=footer&reversal=true&text=I%20see%20you&fontSize=34&fontColor=ffffff&fontAlignY=70&animation=twinkling" width="100%" alt="I see you" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7b2ff7,50:1e6fd9,100:0b1a3a&height=160&section=footer&reversal=true&text=Ph'ang%2C%20may%20your%20spirit%20go%20with%20Eywa&fontSize=24&fontColor=ffffff&fontAlignY=70&animation=twinkling" width="100%" alt="Ph'ang, may your spirit go with Eywa" />
 </p>

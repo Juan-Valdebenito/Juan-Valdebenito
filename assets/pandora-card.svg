@@ -1,4 +1,28 @@
 <svg width="880" height="420" viewBox="0 0 880 420" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Code','JetBrains Mono',Consolas,'Courier New',monospace">
+  <style>
+    .tendrils path { animation: shimmer 4s ease-in-out infinite; }
+    .tendrils path:nth-child(3n)   { animation-delay: -1.3s; }
+    .tendrils path:nth-child(3n+1) { animation-delay: -2.6s; }
+    .tendrils path:nth-child(4n)   { animation-duration: 5.5s; }
+    @keyframes shimmer { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+    .stars circle { animation: twinkle 3s ease-in-out infinite; }
+    .stars circle:nth-child(2n) { animation-delay: -1s; animation-duration: 4s; }
+    .stars circle:nth-child(3n) { animation-delay: -2s; }
+    @keyframes twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
+
+    .sprite { animation: rise 9s linear infinite; opacity: 0; }
+    @keyframes rise {
+      0%   { transform: translate(0, 0); opacity: 0; }
+      15%  { opacity: 1; }
+      50%  { transform: translate(8px, -110px); }
+      85%  { opacity: 0.8; }
+      100% { transform: translate(-6px, -220px); opacity: 0; }
+    }
+
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+  </style>
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#03070F"/>
@@ -17,6 +41,28 @@
       <stop offset="0" stop-color="#0A1E3F"/>
       <stop offset="1" stop-color="#03070F"/>
     </linearGradient>
+    <linearGradient id="planet" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#7FD3E8"/>
+      <stop offset="0.18" stop-color="#4A9FC9"/>
+      <stop offset="0.3" stop-color="#8ED9E0"/>
+      <stop offset="0.45" stop-color="#3B7FB5"/>
+      <stop offset="0.6" stop-color="#6CC3D6"/>
+      <stop offset="0.78" stop-color="#2F6AA3"/>
+      <stop offset="1" stop-color="#1E4F86"/>
+    </linearGradient>
+    <radialGradient id="planetShade" cx="0.25" cy="0.3" r="0.85">
+      <stop offset="0.45" stop-color="#03070F" stop-opacity="0"/>
+      <stop offset="1" stop-color="#03070F" stop-opacity="0.92"/>
+    </radialGradient>
+    <linearGradient id="tendril" gradientUnits="userSpaceOnUse" x1="0" y1="180" x2="0" y2="355">
+      <stop offset="0" stop-color="#F3E8FF"/>
+      <stop offset="0.5" stop-color="#C9B3FF"/>
+      <stop offset="1" stop-color="#FF8AD8"/>
+    </linearGradient>
+    <radialGradient id="treeGlow">
+      <stop offset="0" stop-color="#FF8AD8" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#FF8AD8" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="card"><rect width="880" height="420" rx="16"/></clipPath>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2" result="b"/>
@@ -29,7 +75,7 @@
     <rect width="880" height="420" fill="url(#sky)"/>
 
     <!-- Estrellas -->
-    <g fill="#FFFFFF">
+    <g class="stars" fill="#FFFFFF">
       <circle cx="40" cy="30" r="1"/>   <circle cx="95" cy="70" r="0.8"/> <circle cx="150" cy="22" r="1.2"/>
       <circle cx="210" cy="55" r="0.8"/> <circle cx="268" cy="18" r="1"/>  <circle cx="330" cy="62" r="0.7"/>
       <circle cx="372" cy="28" r="1"/>  <circle cx="420" cy="14" r="0.8"/> <circle cx="470" cy="40" r="0.7"/>
@@ -39,9 +85,106 @@
       <circle cx="860" cy="90" r="0.7"/> <circle cx="18" cy="190" r="0.8"/>
     </g>
 
+    <!-- Polyphemus y su luna -->
+    <g opacity="0.9">
+      <circle cx="92" cy="92" r="58" fill="url(#planet)"/>
+      <circle cx="92" cy="92" r="58" fill="url(#planetShade)"/>
+      <ellipse cx="92" cy="92" rx="88" ry="10" fill="none" stroke="#8ED9E0" stroke-opacity="0.25" transform="rotate(-18 92 92)"/>
+    </g>
+    <circle cx="178" cy="58" r="7" fill="#C9D6E8" opacity="0.75"/>
+    <circle cx="180" cy="57" r="7" fill="#03070F" opacity="0.6"/>
+
+    <!-- Montanas flotantes -->
+    <g fill="#0A1E3F" stroke="#58E6D9" stroke-opacity="0.25">
+      <path d="M318 150 Q328 138 346 140 Q362 136 372 148 Q360 160 352 178 Q344 168 338 182 Q330 166 318 150 Z"/>
+      <path d="M22 236 Q32 228 48 230 Q58 232 62 240 Q52 248 46 262 Q38 250 22 236 Z"/>
+    </g>
+    <g stroke="#58E6D9" stroke-opacity="0.3" fill="none">
+      <path d="M340 178 q2 14 -1 24"/><path d="M352 176 q-2 12 1 20"/><path d="M44 260 q2 10 0 18"/>
+    </g>
+
     <!-- Suelo -->
     <path d="M0 372 Q110 344 230 366 T470 370 T700 360 T880 374 V420 H0 Z" fill="url(#ground)"/>
     <path d="M0 372 Q110 344 230 366 T470 370 T700 360 T880 374" fill="none" stroke="#58E6D9" stroke-opacity="0.35"/>
+
+    <!-- Arbol de las Almas -->
+    <ellipse cx="195" cy="362" rx="150" ry="22" fill="url(#treeGlow)"/>
+    <g fill="#0B1230" stroke="#2A2F6B" stroke-opacity="0.8">
+      <path d="M172 370 Q182 352 184 320 Q186 280 180 246 L192 238 L206 244 Q202 284 206 320 Q210 352 222 370 Q206 362 197 366 Q186 362 172 370 Z"/>
+    </g>
+    <g stroke="#1B2350" stroke-linecap="round" fill="none">
+      <path d="M190 246 Q150 214 92 226" stroke-width="5"/>
+      <path d="M194 242 Q170 200 128 190" stroke-width="5"/>
+      <path d="M196 240 Q196 200 196 176" stroke-width="5"/>
+      <path d="M198 242 Q222 200 262 190" stroke-width="5"/>
+      <path d="M200 246 Q240 214 300 226" stroke-width="5"/>
+    </g>
+    <path d="M84 232 Q100 190 150 178 Q195 166 240 178 Q290 190 306 232 Q250 214 195 214 Q140 214 84 232 Z" fill="#0B1230" stroke="#C9B3FF" stroke-opacity="0.35"/>
+    <g class="tendrils" fill="none" stroke="url(#tendril)" stroke-linecap="round" filter="url(#glow)">
+        <path d="M87.8 227.6 Q92.9 262.6 89.8 297.7" stroke-opacity="0.71" stroke-width="1.3"/>
+        <path d="M92.9 223.4 Q93.0 251.0 93.0 278.7" stroke-opacity="0.78" stroke-width="1.5"/>
+        <path d="M95.5 221.3 Q90.6 251.9 93.5 282.6" stroke-opacity="0.86" stroke-width="1.4"/>
+        <path d="M99.8 217.9 Q105.4 264.6 102.1 311.2" stroke-opacity="0.79" stroke-width="1.3"/>
+        <path d="M104.8 214.2 Q105.2 239.6 105.0 264.9" stroke-opacity="0.53" stroke-width="1.0"/>
+        <path d="M109.7 210.8 Q109.3 237.1 109.6 263.3" stroke-opacity="0.7" stroke-width="1.5"/>
+        <path d="M115.4 207.1 Q115.4 248.8 115.4 290.5" stroke-opacity="0.8" stroke-width="1.2"/>
+        <path d="M119.0 204.9 Q124.9 256.0 121.4 307.2" stroke-opacity="0.88" stroke-width="1.4"/>
+        <path d="M123.7 202.2 Q121.2 235.0 122.7 267.8" stroke-opacity="0.53" stroke-width="1.4"/>
+        <path d="M128.6 199.5 Q127.2 248.8 128.0 298.1" stroke-opacity="0.93" stroke-width="1.5"/>
+        <path d="M131.5 198.0 Q136.5 231.4 133.5 264.7" stroke-opacity="0.71" stroke-width="1.6"/>
+        <path d="M137.7 195.0 Q139.2 225.6 138.3 256.1" stroke-opacity="0.85" stroke-width="1.1"/>
+        <path d="M141.0 193.6 Q146.6 231.5 143.2 269.4" stroke-opacity="0.84" stroke-width="1.0"/>
+        <path d="M146.2 191.5 Q140.9 223.8 144.1 256.1" stroke-opacity="0.86" stroke-width="1.0"/>
+        <path d="M152.0 189.3 Q148.3 232.1 150.5 274.9" stroke-opacity="0.83" stroke-width="1.0"/>
+        <path d="M156.9 187.8 Q155.9 221.8 156.5 255.9" stroke-opacity="0.6" stroke-width="1.1"/>
+        <path d="M162.7 186.1 Q160.4 241.0 161.8 295.8" stroke-opacity="0.9" stroke-width="1.0"/>
+        <path d="M165.0 185.6 Q166.7 242.3 165.7 299.1" stroke-opacity="0.55" stroke-width="1.6"/>
+        <path d="M168.8 184.7 Q172.1 224.5 170.1 264.3" stroke-opacity="0.65" stroke-width="1.1"/>
+        <path d="M172.8 184.0 Q173.8 219.2 173.2 254.5" stroke-opacity="0.61" stroke-width="1.3"/>
+        <path d="M178.6 183.1 Q184.1 230.2 180.8 277.3" stroke-opacity="0.72" stroke-width="1.3"/>
+        <path d="M185.1 182.4 Q180.9 222.0 183.4 261.7" stroke-opacity="0.91" stroke-width="1.5"/>
+        <path d="M187.2 182.2 Q190.0 222.4 188.3 262.5" stroke-opacity="0.92" stroke-width="1.0"/>
+        <path d="M194.5 182.0 Q195.8 245.6 195.0 309.2" stroke-opacity="0.69" stroke-width="1.0"/>
+        <path d="M195.4 182.0 Q192.3 248.2 194.2 314.4" stroke-opacity="0.82" stroke-width="1.1"/>
+        <path d="M203.1 182.3 Q200.6 235.2 202.1 288.2" stroke-opacity="0.58" stroke-width="1.4"/>
+        <path d="M204.7 182.4 Q205.4 223.5 204.9 264.6" stroke-opacity="0.88" stroke-width="1.3"/>
+        <path d="M210.1 182.9 Q206.5 244.6 208.6 306.3" stroke-opacity="0.51" stroke-width="1.1"/>
+        <path d="M215.3 183.6 Q211.4 218.2 213.7 252.8" stroke-opacity="0.67" stroke-width="1.3"/>
+        <path d="M218.6 184.2 Q223.3 227.5 220.4 270.7" stroke-opacity="0.94" stroke-width="1.4"/>
+        <path d="M225.4 185.7 Q221.0 234.4 223.6 283.2" stroke-opacity="0.52" stroke-width="0.9"/>
+        <path d="M230.8 187.1 Q236.3 238.3 233.0 289.5" stroke-opacity="0.51" stroke-width="1.3"/>
+        <path d="M233.6 187.9 Q231.5 239.4 232.8 291.0" stroke-opacity="0.95" stroke-width="1.0"/>
+        <path d="M238.4 189.5 Q243.2 240.3 240.4 291.1" stroke-opacity="0.83" stroke-width="1.4"/>
+        <path d="M244.0 191.5 Q242.2 246.2 243.3 300.8" stroke-opacity="0.81" stroke-width="1.5"/>
+        <path d="M248.8 193.5 Q252.3 233.7 250.2 274.0" stroke-opacity="0.89" stroke-width="1.3"/>
+        <path d="M252.4 195.1 Q253.4 233.8 252.8 272.6" stroke-opacity="0.77" stroke-width="1.0"/>
+        <path d="M257.0 197.3 Q261.6 251.3 258.8 305.3" stroke-opacity="0.83" stroke-width="1.2"/>
+        <path d="M262.0 199.8 Q261.2 242.2 261.7 284.6" stroke-opacity="0.88" stroke-width="1.0"/>
+        <path d="M266.6 202.3 Q267.8 230.1 267.1 257.9" stroke-opacity="0.72" stroke-width="1.1"/>
+        <path d="M270.9 204.9 Q272.3 243.7 271.5 282.5" stroke-opacity="0.91" stroke-width="1.1"/>
+        <path d="M272.7 206.0 Q274.9 239.7 273.6 273.4" stroke-opacity="0.59" stroke-width="1.0"/>
+        <path d="M280.9 211.2 Q280.2 252.3 280.6 293.3" stroke-opacity="0.9" stroke-width="1.1"/>
+        <path d="M284.5 213.7 Q283.6 243.4 284.1 273.0" stroke-opacity="0.86" stroke-width="1.5"/>
+        <path d="M289.9 217.7 Q290.9 250.9 290.3 284.0" stroke-opacity="0.64" stroke-width="1.0"/>
+        <path d="M292.9 220.0 Q297.1 262.8 294.6 305.7" stroke-opacity="0.82" stroke-width="1.6"/>
+        <path d="M296.6 222.9 Q296.0 250.3 296.3 277.7" stroke-opacity="0.62" stroke-width="1.0"/>
+        <path d="M301.7 227.1 Q301.6 263.7 301.6 300.2" stroke-opacity="0.64" stroke-width="1.5"/>
+    </g>
+    <g fill="#58E6D9" filter="url(#glow)">
+      <circle cx="120" cy="366" r="1.6"/><circle cx="150" cy="370" r="1.2"/><circle cx="240" cy="368" r="1.5"/>
+      <circle cx="268" cy="364" r="1.1"/><circle cx="300" cy="370" r="1.4"/><circle cx="96" cy="372" r="1.1"/>
+    </g>
+
+    <!-- Semillas de Eywa -->
+    <g fill="#F3FFFE" filter="url(#glow)">
+      <circle class="sprite" cx="120" cy="360" r="2.2" style="animation-delay: 0s"/>
+      <circle class="sprite" cx="160" cy="364" r="1.8" style="animation-delay: -2.2s"/>
+      <circle class="sprite" cx="235" cy="362" r="2.4" style="animation-delay: -4.5s"/>
+      <circle class="sprite" cx="275" cy="366" r="1.7" style="animation-delay: -6.8s"/>
+      <circle class="sprite" cx="195" cy="368" r="2" style="animation-delay: -3.4s"/>
+      <circle class="sprite" cx="90" cy="368" r="1.6" style="animation-delay: -7.9s"/>
+      <circle class="sprite" cx="310" cy="366" r="1.9" style="animation-delay: -5.6s"/>
+    </g>
 
     <!-- Datos -->
     <text x="420" y="78" font-size="26" font-weight="bold" fill="url(#name)" filter="url(#glow)">Juan Pablo Valdebenito</text>
@@ -68,7 +211,7 @@
     </g>
 
     <!-- Pie -->
-    <text x="420" y="402" font-size="10" fill="#58E6D9" letter-spacing="1">● TSAHEYLU ESTABLISHED</text>
+    <text x="420" y="402" font-size="10" fill="#58E6D9" letter-spacing="1"><tspan class="pulse">●</tspan> TSAHEYLU ESTABLISHED</text>
     <text x="860" y="402" text-anchor="end" font-size="10" fill="#9B6BFF" letter-spacing="1">OEL NGATI KAMEIE · I SEE YOU</text>
   </g>
 
