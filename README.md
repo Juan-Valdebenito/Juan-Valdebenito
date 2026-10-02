@@ -21,5 +21,5 @@
 <br />
 
 <p align="center">
-  <img src="assets/pandora-sea.svg" width="100%" alt="Ph'ang, may your spirit go with Eywa · Oel ngati kameie, I see you" />
+  <img src="assets/eywa-network.svg" width="100%" alt="Red de Eywa: Ph'ang, may your spirit go with Eywa · Oel ngati kameie, I see you" />
 </p>
