@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=github,terraform,linux,windows,vercel" alt="GitHub, Terraform, Linux, Windows, Vercel" />
+    <img src="https://skillicons.dev/icons?i=nodejs,github,terraform,linux,windows,vercel" alt="Node.js, GitHub, Terraform, Linux, Windows, Vercel" />
   </a>
 </p>
 
