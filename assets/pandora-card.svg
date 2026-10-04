@@ -220,20 +220,22 @@
 
     <g font-size="12">
       <g fill="#58E6D9" letter-spacing="1">
-        <text x="420" y="152">◆ RUTA</text>
-        <text x="420" y="182">◆ LENGUAJES</text>
-        <text x="420" y="212">◆ FRAMEWORK</text>
-        <text x="420" y="242">◆ HERRAMIENTAS</text>
-        <text x="420" y="272">◆ SISTEMAS</text>
-        <text x="420" y="302">◆ ESTADO</text>
+        <text x="420" y="150">◆ RUTA</text>
+        <text x="420" y="178">◆ LENGUAJES</text>
+        <text x="420" y="206">◆ WEB</text>
+        <text x="420" y="234">◆ DATOS</text>
+        <text x="420" y="262">◆ HERRAMIENTAS</text>
+        <text x="420" y="290">◆ SISTEMAS</text>
+        <text x="420" y="318">◆ ESTADO</text>
       </g>
       <g fill="#E6F1FF">
-        <text x="560" y="152">Software · Web · Data Science</text>
-        <text x="560" y="182">TypeScript · JavaScript · Python · C++</text>
-        <text x="560" y="212">React</text>
-        <text x="560" y="242">Node.js · GitHub · Terraform · Vercel</text>
-        <text x="560" y="272">Linux · Windows</text>
-        <text x="560" y="302">Estudiante · aprendiendo cada día</text>
+        <text x="560" y="150">Software · Web · Data Science</text>
+        <text x="560" y="178">TypeScript · JavaScript · Python · C++</text>
+        <text x="560" y="206">React · Node.js</text>
+        <text x="560" y="234">NumPy · Pandas</text>
+        <text x="560" y="262">Git · GitHub · Terraform · Vercel</text>
+        <text x="560" y="290">Linux · Windows</text>
+        <text x="560" y="318">Estudiante · aprendiendo cada día</text>
       </g>
     </g>
 

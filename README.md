@@ -14,8 +14,15 @@
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nodejs,github,terraform,linux,windows,vercel" alt="Node.js, GitHub, Terraform, Linux, Windows, Vercel" />
+    <img src="https://skillicons.dev/icons?i=nodejs,git,github,terraform,linux,windows,vercel" alt="Node.js, Git, GitHub, Terraform, Linux, Windows, Vercel" />
   </a>
+</p>
+
+### $\color{#FF8AD8}{\textsf{Data Science}}$
+
+<p align="center">
+  <img src="assets/icons/numpy.svg" width="48" alt="NumPy" />&nbsp;
+  <img src="assets/icons/pandas.svg" width="48" alt="Pandas" />
 </p>
 
 <br />
