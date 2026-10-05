@@ -25,6 +25,16 @@
   <img src="assets/icons/pandas.svg" width="48" alt="Pandas" />
 </p>
 
+### $\color{#58E6D9}{\textsf{Contáctame}}$
+
+<p align="center">
+  <a href="mailto:juanpablojavierv@gmail.com">
+    <img src="https://skillicons.dev/icons?i=gmail" alt="Gmail" />
+  </a>
+  <br />
+  <a href="mailto:juanpablojavierv@gmail.com">juanpablojavierv@gmail.com</a>
+</p>
+
 <br />
 
 <p align="center">
