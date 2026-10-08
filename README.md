@@ -25,6 +25,14 @@
   <img src="assets/icons/pandas.svg" width="48" alt="Pandas" />
 </p>
 
+### $\color{#9B6BFF}{\textsf{Mis proyectos}}$
+
+<p align="center">
+  Puedes ver algunos de mis proyectos en mi página web:
+  <br />
+  <a href="https://fullfragance.cl/"><b>FullFragance.cl</b></a>
+</p>
+
 ### $\color{#58E6D9}{\textsf{Contáctame}}$
 
 <p align="center">
